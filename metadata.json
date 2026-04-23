@@ -1,0 +1,5 @@
+{
+  "name": "CarWise-AI",
+  "description": "An AI car finder that searches live used-car listings and summarizes the best options.",
+  "requestFramePermissions": []
+}
