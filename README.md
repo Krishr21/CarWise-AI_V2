@@ -8,14 +8,19 @@ CarWise-AI is an intelligent, live-search powered used car assistant. It uses th
 
 Instead of hallucinating fake listings, CarWise-AI provides real, clickable links to actual cars on major marketplaces, complete with AI-generated pros, cons, and summaries for each vehicle.
 
+## Project Structure
+This repository contains two main applications:
+- **Web App**: A React + Vite web frontend located in the root directory.
+- **Mobile App**: A cross-platform mobile app built with React Native and Expo located in the `/mobile` directory.
+
 ## Features
 
 - **Live Web Search**: Uses Google Search Grounding to pull 100% genuine, verifiable used car listings.
 - **Smart Analysis**: Automatically generates pros, cons, and summaries for each listing.
-- **Comparison Grid**: View and compare mileage, price, location, and sources side-by-side.
+- **Cross-Platform**: Available as both a modern web app and a native mobile experience (iOS/Android).
 - **Graceful Error Handling**: Intelligently handles missing data when scraping complex real-world listings.
 
-## Run Locally
+## Run Locally (Web App)
 
 **Prerequisites:** Node.js
 
@@ -29,15 +34,43 @@ Instead of hallucinating fake listings, CarWise-AI provides real, clickable link
    ```bash
    cp .env.example .env.local
    ```
-   Open `.env.local` and set `GEMINI_API_KEY` to your actual Google AI Studio key.
+   Open `.env.local` and set `VITE_GEMINI_API_KEY` to your actual Google AI Studio key.
 
 3. Run the development server:
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open the localhost link provided by Vite in your browser.
+
+## Run Locally (Mobile App)
+
+**Prerequisites:** Node.js, Expo CLI, iOS Simulator or Android Emulator (or Expo Go app on your physical device).
+
+1. Navigate to the mobile directory:
+   ```bash
+   cd mobile
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up your environment variables:
+   Create a `.env` file in the `mobile` directory and add your Gemini API Key.
+   ```bash
+   EXPO_PUBLIC_GEMINI_API_KEY=your_api_key_here
+   ```
+
+4. Start the Expo development server:
+   ```bash
+   npx expo start
+   ```
+
+5. Follow the terminal instructions to open the app in a simulator or on your physical device using the Expo Go app.
 
 ## Built With
-- **Frontend**: React, Vite, Tailwind CSS, Framer Motion
-- **AI**: `@google/genai` (Gemini 3 Flash Preview)
+- **Web Frontend**: React, Vite, Tailwind CSS, Framer Motion
+- **Mobile Frontend**: React Native, Expo, Expo Router
+- **AI**: `@google/genai` (Gemini Flash / Gemini Pro)
