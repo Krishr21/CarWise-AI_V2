@@ -18,6 +18,7 @@ import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { CarListing, SearchFilters, SearchState } from './types';
 import { searchCars } from './services/geminiService';
+import Chatbot from './components/Chatbot';
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -343,6 +344,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Chatbot />
     </div>
   );
 }

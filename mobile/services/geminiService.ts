@@ -1,8 +1,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { CarListing, SearchFilters } from "../types";
 
-// This specifically falls back to GEMINI_API_KEY if OPENROUTER is provided but we need native Google SDK for search
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+// This specifically falls back to EXPO_PUBLIC_GEMINI_API_KEY if OPENROUTER is provided but we need native Google SDK for search
+const ai = new GoogleGenAI({ apiKey: process.env.EXPO_PUBLIC_GEMINI_API_KEY || "" });
 
 export async function searchCars(filters: SearchFilters): Promise<CarListing[]> {
   // Using native Gemini Flash Preview because it supports Google Search Grounding for live URLs
